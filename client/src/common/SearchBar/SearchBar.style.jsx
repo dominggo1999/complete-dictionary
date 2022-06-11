@@ -2,8 +2,8 @@ import tw, { styled } from 'twin.macro';
 
 export const SearchBarWrapper = styled.div`
   ${tw`
-    flex 
-    flex-col
+    flex  
+    gap-x-4
   `}
 
   input{

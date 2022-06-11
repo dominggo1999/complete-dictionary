@@ -2,6 +2,7 @@ import React, { useRef, useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchBarWrapper } from './SearchBar.style.jsx';
 import useWordStore from '../../store/useWordStore.jsx';
+import Pronunciation from '../Pronunciation/Pronunciation.jsx';
 
 const SearchBar = () => {
   const word = useWordStore((state) => state.word);
@@ -37,6 +38,7 @@ const SearchBar = () => {
           value={searchQuery}
         />
       </form>
+      <Pronunciation />
     </SearchBarWrapper>
   );
 };
