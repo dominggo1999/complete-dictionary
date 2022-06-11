@@ -29,7 +29,9 @@ export const vocabularyComDefinitions = async (req, res, next) => {
   const long = await (getElementSingle($, '.long'));
 
   res.send({
-    short,
-    long,
+    english: {
+      short,
+      long,
+    },
   });
 };
