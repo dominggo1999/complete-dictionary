@@ -14,7 +14,6 @@ export const loadUrl = async (url, options = {}) => {
       method: 'GET',
       headers: {
         ...headers,
-        Accept: audioBase64 && 'audio/mpeg',
       },
     });
 
