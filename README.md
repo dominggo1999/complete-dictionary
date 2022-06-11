@@ -7,7 +7,7 @@
 
 ### Deployment
   - Client\
-     [![Deploy with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/dominggo1999/complete-dictionary/tree/master/client)\
+     [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dominggo1999/complete-dictionary/tree/master/client)  \
      or\
      [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dominggo1999/complete-dictionary) 
   - Backend\
