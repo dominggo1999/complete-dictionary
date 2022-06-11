@@ -31,7 +31,7 @@ export const indoDefinitions = async (req, res, next) => {
       .map((item) => {
         const split = item.i.split('.');
         // If definition not found then there is no word type (ex : n, adj, adv)
-        if (split.length !== 2) {
+        if (split.length < 2) {
           return [];
         }
 
