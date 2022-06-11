@@ -22,7 +22,9 @@ const SearchBar = () => {
     const val = e.target.value;
     const onlyAlphabets = /^[a-zA-Z]+$/gi;
 
-    setSearchQuery(val);
+    if (onlyAlphabets.test(val) || val === '') {
+      setSearchQuery(val);
+    }
   };
 
   return (
