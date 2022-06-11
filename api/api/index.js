@@ -4,6 +4,7 @@ import cors from 'cors';
 import vocabRouter from './routes/vocab.route.js';
 import youdaoRouter from './routes/youdao.route.js';
 import hippoRouter from './routes/hippo.route.js';
+import audioRouter from './routes/audio.route.js';
 
 dotenv.config();
 const app = express();
@@ -27,6 +28,7 @@ app.get('/api/hello', (req, res) => {
 app.use('/api/vocab', vocabRouter);
 app.use('/api/youdao', youdaoRouter);
 app.use('/api/hippo', hippoRouter);
+app.use('/api/audio', audioRouter);
 
 // If using serverful than init server
 if (process.env.SERVERFUL) {
