@@ -1,55 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import tw, { styled } from 'twin.macro';
-import { backendURL } from './config/backendURL';
-
-export const Box = styled.div`
-  ${tw`
-    w-full 
-    h-screen 
-    bg-black 
-    flex  
-    flex-col
-    justify-center
-    items-center
-    text-white
-    text-2xl  
-    gap-y-2
-  `}
-`;
-
-export const Button = styled.button`
-  ${tw`
-    bg-blue-400 
-    text-black 
-    px-3 
-    py-1 
-    rounded
-  `}
-`;
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import Definitions from './layout/Definitions/Definitions.jsx';
+import useWordStore from './store/useWordStore.jsx';
+import { AppWrapper } from './App.style.jsx';
+import Sentences from './layout/Sentences/Sentences.jsx';
 
 const App = () => {
-  const [message, setMessage] = useState('');
-  const [time, setTime] = useState('');
+  const changeWord = useWordStore((state) => state.changeWord);
+  const { pathname } = useLocation();
 
-  const handleClick = async () => {
-    const res = await fetch(`${backendURL}/hello`);
-    console.log(res);
-    const { message, timestamp } = await res.json();
-    setMessage(message);
-    setTime(timestamp);
-  };
+  useEffect(() => {
+    changeWord(pathname.replace('/', ''));
+  }, [pathname]);
 
   return (
-    <Box>
-      <div>
-        Placeholder
-      </div>
-      <Button onClick={handleClick}>Call Backend</Button>
-
-      <div tw="mt-2">
-        <p>{message}{' '}{time}</p>
-      </div>
-    </Box>
+    <AppWrapper>
+      <Definitions />
+      <Sentences />
+    </AppWrapper>
   );
 };
 
